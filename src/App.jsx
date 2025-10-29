@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import SignUp from "./Components/SignUp/SignUp";
+import Products from "./Components/Products/Products";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         changeHandler={changeHandler}
         submitHandler={submitHandler}
         clickHandler={clickHandler}
-      /> */}
+        /> */}
+      <Products />
     </>
   );
 }
