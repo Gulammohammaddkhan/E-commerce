@@ -14,16 +14,17 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/products" element={<Products />} />
 
-        <Route path="/signin" element={<SignUp />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
-      {/* <SignIn
+      {/* <SignUp
         formData={formData}
         changeHandler={changeHandler}
         submitHandler={submitHandler}
         clickHandler={clickHandler}
         /> */}
-      <Products />
+      {/* <Products /> */}
     </>
   );
 }

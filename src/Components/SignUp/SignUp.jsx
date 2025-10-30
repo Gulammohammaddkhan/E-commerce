@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
-import { Routes, Route, Link, data } from "react-router-dom";
+import { Routes, Route, Link, data, useNavigate } from "react-router-dom";
 
 function SignUp() {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const [massege, setMassege] = useState("");
+
+  const navigate = useNavigate();
 
   function userNameHandler(e) {
     // const { name, value } = e.target;
@@ -30,8 +33,14 @@ function SignUp() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: userName, password: userPassword }),
     })
-      // .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setMassege(data);
+        // logic to go to login page
+        navigate("/login");
+      })
+      .catch((e) => console.log(e));
   }
 
   return (

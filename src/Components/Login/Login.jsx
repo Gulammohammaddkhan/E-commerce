@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
-import { Routes, Route, Link, Links } from "react-router-dom";
-import SignIn from "../SignUp/SignUp";
+import { Routes, Route, Link, Links, useNavigate } from "react-router-dom";
+import SignUp from "../SignUp/SignUp";
 
 function Login() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   function userNameHandler(e) {
     setUserName(e.target.value);
@@ -15,15 +17,35 @@ function Login() {
     setPassword(e.target.value);
   }
 
-  function submitHandler() {
+  function submitHandler(e) {
     e.preventDefault();
+
+    console.log("loign", userName, password);
+
+    //   fetch("https://e-commerce-backened-4fih.onrender.com/login", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify({ username: userName, password: password }),
+    //   })
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       console.log(data);
+    //       navigate("/products");
+    //     })
+    //     .catch((e) => console.log("hgfshgfshgfsghsf", e));
+    // }
+
     fetch("https://e-commerce-backened-4fih.onrender.com/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: userName, password: password }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        navigate("/products");
+      })
+      .catch((error) => console.log("error!", error));
   }
 
   return (
@@ -44,11 +66,11 @@ function Login() {
           </label>
           <input
             onChange={userNameHandler}
-            type="mail"
+            type="text"
             className="border-2 rounded-md px-2 py-2 border-gray-400 outline-0"
-            placeholder="mail..."
-            // value={formData.mail}
-            name="mail"
+            placeholder="entre your user name"
+            value={userName}
+            name="username"
           />
           <label className="text-md font-extralight  font-serif  py-2">
             Password
@@ -58,22 +80,18 @@ function Login() {
             type="password"
             className="border-2 rounded-md px-2 py-2 border-gray-400 outline-0 mb-4"
             placeholder="password..."
-            // value={formData.password}
+            value={password}
             name="password"
             required
           />
 
-          <Button
-            text=" Log-in"
-            clickHandler={() => clickHandler("login")}
-            // formData={formData}
-          />
+          <Button text=" Log-in" />
         </form>
         <div className="flex items-center justify-between gap-4 pt-2 text-sm font-serif text-gray-500">
           <div>New Customer?</div>
           <Link
             className="text-blue-700 font-semibold hover:scale-102"
-            to="/signin"
+            to="/signup"
             replace={true}
           >
             Sign-up
