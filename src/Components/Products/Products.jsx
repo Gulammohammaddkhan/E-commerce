@@ -23,7 +23,6 @@ function Products() {
       {products.map((item, index) => {
         return <Card item={item} index={index} />;
       })}
-      <p>products</p>
     </div>
   );
 }

@@ -1,0 +1,17 @@
+/* Custom CSS file mein yeh code paste karein */
+
+@keyframes marquee-scroll {
+  /* Animation ko shuru mein thoda aur adjust karte hain taaki gap cover ho */
+  from {
+    transform: translateX(0);
+  }
+  /* -50% tak move karte hain taaki 2 sets of content ke beech seamless transition ho */
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-container {
+  animation: marquee-scroll 15s linear infinite; /* Speed ko thoda fast kiya (15s) */
+  width: 200%; /* Total width ko double kiya taaki 2 content sets fit ho jayein */
+}
