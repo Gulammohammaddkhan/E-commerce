@@ -4,17 +4,13 @@ import Card from "../Cards/Card";
 function Products() {
   const [products, setProducts] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("https://e-commerce-backened-4fih.onrender.com/products")
-  //     .then((res) => res.json())
-  //     .then((data) => setProducts(data))
-  //     .catch((err) => console.error(err));
-  // }, []);
-
   useEffect(() => {
     fetch("https://e-commerce-backened-4fih.onrender.com/products")
       .then((res) => res.json())
-      .then((data) => setProducts(data))
+      .then((data) => {
+        console.log(data);
+        setProducts(data.products);
+      })
       .catch((error) => console.log(error));
   }, []);
 

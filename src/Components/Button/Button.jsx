@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Button({ text, clickHandler }) {
+function Button({ text, clickHandler, backGroundColor, icon }) {
   // const [btnDisabled, setBtnDisabled] = useState(false);
 
   // function disabledHandler() {
@@ -22,10 +22,11 @@ function Button({ text, clickHandler }) {
     <div className="flex justify-center items-center">
       <button
         onClick={clickHandler}
-        className={` w-full px-6 py-3 cursor-pointer hover:scale-101 transition-all rounded-md text-white font-semibold font-serif bg-blue-950`}
-        // disabled={disabledHandler}
+        className={` w-full px-6 py-3 flex flex-row items-center gap-2 cursor-pointer hover:scale-101 transition-all rounded-md text-white font-semibold font-serif bg-blue-950`} // disabled={disabledHandler}
+        style={{ backgroundColor: backGroundColor }}
       >
-        {text}
+        {icon && icon}
+        <span>{text}</span>
       </button>
     </div>
   );
