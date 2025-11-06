@@ -22,8 +22,8 @@ function ProductDetail() {
 
   return (
     product && (
-      <div className="flex px-2">
-        <div className="">
+      <div className="flex px-2 h-screen">
+        <div className="sticky top-10 h-fit">
           {/* thumbnail */}
           <img
             src={product.thumbnail}
@@ -31,23 +31,27 @@ function ProductDetail() {
             className="w-[200px]"
           />
         </div>
-        <div className="">
+        <div className="sticky top-10 ml-4">
           {/* product-imge */}
           <img src={product.images[0]} alt="product-image" />
           <div className="flex justify-around">
             <Button
               text="ADD TO CART"
               backGroundColor="#ff9d00"
+              display="flex"
+              flexDirection="row"
               icon={<IoMdCart size={20} />}
             />
             <Button
               text="BUY NOW"
               backGroundColor="#fa661b"
+              display="flex"
+              flexDirection="row"
               icon={<AiFillThunderbolt size={20} />}
             />
           </div>
         </div>
-        <div className="px-2">
+        <div className="h-screen px-2 overflow-y-scroll [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ">
           <div className="text-4xl font-semibold font-sans pt-4 pb-6">
             {product.title}
           </div>
