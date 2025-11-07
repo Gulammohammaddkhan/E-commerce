@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="flex justify-around items-center h-16 sticky top-0">
+    <div className="flex justify-around items-center h-16 sticky top-0 z-50 bg-white shadow-md">
       <Link to="/">
         <button className="cursor-pointer">
           <img src={logo} alt="" className="w-[100px] h-18" />

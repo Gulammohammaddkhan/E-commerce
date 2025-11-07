@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "../Cards/Card";
+import { Link } from "react-router-dom";
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -17,7 +18,11 @@ function Products() {
   return (
     <div className="grid grid-cols-3 gap-5 bg-gray-100">
       {products.map((item, index) => {
-        return <Card item={item} index={index} />;
+        return (
+          <Link to={`/products/${item.id}`}>
+            <Card item={item} index={index} />
+          </Link>
+        );
       })}
     </div>
   );

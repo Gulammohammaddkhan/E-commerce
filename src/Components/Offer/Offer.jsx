@@ -38,13 +38,13 @@ function Offer() {
             />
             <button
               onClick={backBtn}
-              className=" absolute top-[45%] left-[-2%] text-black "
+              className=" absolute top-[45%] left-[-2%] text-[#52a3ff] "
             >
               <IoIosArrowDropleftCircle size={"30px"} />
             </button>
             <button
               onClick={nextBtn}
-              className="absolute top-[45%] right-[-2%] text-black  "
+              className="absolute top-[45%] right-[-2%] text-[#52a3ff]  "
             >
               <IoIosArrowDroprightCircle className="" size={"30px"} />
             </button>

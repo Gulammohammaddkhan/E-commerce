@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 function Card({ item, index }) {
   return (
-    <Link to={`/products/${item.id}`}>
       <div className="w-full  flex justify-center py-6 px-4">
         <div
           key={`${item.id}-${index}`}
@@ -33,7 +32,7 @@ function Card({ item, index }) {
           {/* Rating and Count */}
           <div className="flex gap-6 text-sm mb-3">
             <p className="flex items-center text-yellow-500 font-medium">
-                {" "}
+              {" "}
               <span className="ml-1 text-gray-700 dark:text-gray-300">
                 {item.rating.rate}
               </span>
@@ -92,7 +91,6 @@ function Card({ item, index }) {
           </p>
         </div>
       </div>
-    </Link>
   );
 }
 
