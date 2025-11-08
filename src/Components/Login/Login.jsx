@@ -6,6 +6,7 @@ import SignUp from "../SignUp/SignUp";
 function Login() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
@@ -19,34 +20,47 @@ function Login() {
 
   function submitHandler(e) {
     e.preventDefault();
-
-    console.log("loign", userName, password);
-
-    //   fetch("https://e-commerce-backened-4fih.onrender.com/login", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({ username: userName, password: password }),
-    //   })
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //       console.log(data);
-    //       navigate("/products");
-    //     })
-    //     .catch((e) => console.log("hgfshgfshgfsghsf", e));
-    // }
-
     fetch("https://e-commerce-backened-4fih.onrender.com/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: userName, password: password }),
     })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        navigate("/products");
+      .then((res) => {
+        if (res.ok) {
+          localStorage.setItem("username", userName);
+          navigate("/products");
+        }
       })
-      .catch((error) => console.log("error!", error));
+      .catch((e) => console.log("hgfshgfshgfsghsf", e));
   }
+
+  // try {
+  //   const res = await fetch(
+  //     "https://e-commerce-backened-4fih.onrender.com/login",
+  //     {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify({ username: userName, password: password }),
+  //     }
+  //   );
+  //   console.log(res);
+
+  //   if (res.ok) {
+  //     navigate("/products");
+  //     return;
+  //   }
+  //   const resData = await res.json();
+  //   setError();
+  // } catch (error) {
+  //   console.log("error", error);
+  // }
+
+  // .then((res) => res.json())
+  // .then((data) => {
+  //   console.log(data);
+  //   navigate("/products");
+  // })
+  // .catch((error) => console.log("error!", error));
 
   return (
     <div className="h-screen bg-gradient-to-br from-blue-950 to-blue-500 flex justify-center items-center">
@@ -57,6 +71,7 @@ function Login() {
         <p className="text-md font-extralight text-gray-400 font-serif pb-6">
           Please enter your details
         </p>
+        {error && <p>{error}</p>}
         <form
           onSubmit={submitHandler}
           className="flex flex-col w-full flex-wrap "

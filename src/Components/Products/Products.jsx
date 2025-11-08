@@ -9,7 +9,6 @@ function Products() {
     fetch("https://e-commerce-backened-4fih.onrender.com/products")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setProducts(data.products);
       })
       .catch((error) => console.log(error));
