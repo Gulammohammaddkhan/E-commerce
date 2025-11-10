@@ -5,6 +5,7 @@ import Offer from "../Offer/Offer";
 
 import Cards from "../Cards/Card";
 import Testimonial from "../Testimonial/Testimonial";
+import ProductDetail from "../ProductDetail/ProductDetail";
 
 function Home() {
   return (
@@ -42,7 +43,6 @@ function Home() {
       </div>
       <Offer />
       <Testimonial />
-      {/* <Cards /> */}
       <p>home page</p>
     </div>
   );

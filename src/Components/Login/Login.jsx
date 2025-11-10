@@ -27,9 +27,14 @@ function Login() {
     })
       .then((res) => {
         if (res.ok) {
-          localStorage.setItem("username", userName);
+          // localStorage.setItem("username", userName);
           navigate("/products");
         }
+
+        return res.json();
+      })
+      .then((data) => {
+        setError(data);
       })
       .catch((e) => console.log("hgfshgfshgfsghsf", e));
   }
@@ -71,7 +76,9 @@ function Login() {
         <p className="text-md font-extralight text-gray-400 font-serif pb-6">
           Please enter your details
         </p>
-        {error && <p>{error}</p>}
+        {error && (
+          <p className="text-red-500 font-sans font-semibold">{error}</p>
+        )}
         <form
           onSubmit={submitHandler}
           className="flex flex-col w-full flex-wrap "

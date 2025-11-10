@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { TiStar } from "react-icons/ti";
 import Button from "../Button/Button";
 import { IoMdCart } from "react-icons/io";
@@ -23,7 +23,7 @@ function ProductDetail() {
         console.log("data", data);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     if (category) {
@@ -226,9 +226,11 @@ function ProductDetail() {
             {categoryProducts &&
               categoryProducts.map((item, index) => {
                 return (
-                  <div className="">
-                    <Card item={item} index={index} />;
-                  </div>
+                  <Link to={`/products/${item.id}`}>
+                    <div className="">
+                      <Card item={item} index={index} />;
+                    </div>
+                  </Link>
                 );
               })}
           </div>
