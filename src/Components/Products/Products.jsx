@@ -14,6 +14,9 @@ function Products() {
       .catch((error) => console.log(error));
   }, []);
 
+
+
+  
   return (
     <div className="grid grid-cols-3 gap-5 bg-gray-100">
       {products.map((item, index) => {

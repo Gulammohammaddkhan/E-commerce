@@ -35,6 +35,8 @@ function Login() {
       })
       .then((data) => {
         setError(data);
+        console.log(data.username);
+        localStorage.setItem("userName", data.username);
       })
       .catch((e) => console.log("hgfshgfshgfsghsf", e));
   }

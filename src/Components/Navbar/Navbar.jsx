@@ -5,13 +5,14 @@ import { SiCarto } from "react-icons/si";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import { ImSwitch } from "react-icons/im";
 
 function Navbar() {
-  // const [userName, setUserName] = useState("");
-  // useEffect(() => {
-  //   const user = localStorage.getItem("username");
-  //   setUserName(user);
-  // }, []);
+  const [userName, setUserName] = useState("");
+  useEffect(() => {
+    const user = localStorage.getItem("userName");
+    setUserName(user);
+  }, []);
 
   return (
     <div className="flex justify-around items-center h-16 sticky top-0 z-50 bg-white shadow-md">
@@ -33,10 +34,17 @@ function Navbar() {
         to={"/login"}
         replace={true}
       >
-        <button className="flex justify-center items-center px-4 py-2 gap-2 text-[#172657] font-serif hover:bg-[#172657] cursor-pointer hover:text-white rounded-md">
-          <SlUserFemale /> Login
-          {/* {userName ? userName : "Login"} */}
-        </button>
+        <div className="flex gap-2">
+          <button className="flex justify-center items-center px-4 py-2 gap-2 text-[#172657] font-serif hover:bg-[#172657] cursor-pointer hover:text-white rounded-md">
+            <SlUserFemale />
+            {userName ? userName : "Login"}
+          </button>
+          {userName && (
+            <button className="px-4 py-2 text-[#172657] font-serif hover:bg-[#172657] cursor-pointer hover:text-white rounded-md">
+              <ImSwitch />
+            </button>
+          )}
+        </div>
       </Link>
       <button className="flex items-center gap-3 font-serif text-[#172657] cursor-pointer ">
         <AiOutlineShoppingCart /> Cart

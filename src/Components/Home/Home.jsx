@@ -6,6 +6,7 @@ import Offer from "../Offer/Offer";
 import Cards from "../Cards/Card";
 import Testimonial from "../Testimonial/Testimonial";
 import ProductDetail from "../ProductDetail/ProductDetail";
+import Card from "../Cards/Card";
 
 function Home() {
   return (
@@ -43,6 +44,7 @@ function Home() {
       </div>
       <Offer />
       <Testimonial />
+      {/* <Card item={item} /> */}
       <p>home page</p>
     </div>
   );

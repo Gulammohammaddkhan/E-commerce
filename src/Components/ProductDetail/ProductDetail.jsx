@@ -21,6 +21,11 @@ function ProductDetail() {
         setProduct(data);
         setCategory(data.category);
         console.log("data", data);
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
       })
       .catch((error) => console.log(error));
   }, [id]);
