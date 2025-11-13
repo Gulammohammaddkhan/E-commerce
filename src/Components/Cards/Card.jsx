@@ -40,7 +40,7 @@ function Card({ item, index }) {
             </span>
           </p>
           <p className="flex items-center text-blue-500 font-medium">
-            🛒{" "}
+            ⭐{" "}
             <span className="ml-1 text-gray-700 dark:text-gray-300">
               {item.rating.count} ratings
             </span>

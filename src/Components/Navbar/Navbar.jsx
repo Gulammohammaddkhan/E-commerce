@@ -4,15 +4,27 @@ import { SlUserFemale } from "react-icons/sl";
 import { SiCarto } from "react-icons/si";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ImSwitch } from "react-icons/im";
 
 function Navbar() {
   const [userName, setUserName] = useState("");
+  const nagivate = useNavigate();
+  const location = useLocation();
+  // console.log("location", location);
+
   useEffect(() => {
     const user = localStorage.getItem("userName");
+    console.log("qwerty", user);
+
     setUserName(user);
-  }, []);
+  }, [userName, location]);
+
+  function logOutHandler() {
+    localStorage.removeItem("userName");
+    setUserName("");
+    nagivate("/");
+  }
 
   return (
     <div className="flex justify-around items-center h-16 sticky top-0 z-50 bg-white shadow-md">
@@ -40,7 +52,10 @@ function Navbar() {
             {userName ? userName : "Login"}
           </button>
           {userName && (
-            <button className="px-4 py-2 text-[#172657] font-serif hover:bg-[#172657] cursor-pointer hover:text-white rounded-md">
+            <button
+              onClick={logOutHandler}
+              className="px-4 py-2 text-[#172657] font-serif hover:bg-[#172657] cursor-pointer hover:text-white rounded-md"
+            >
               <ImSwitch />
             </button>
           )}

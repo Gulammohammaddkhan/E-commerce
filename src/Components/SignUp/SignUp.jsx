@@ -35,7 +35,7 @@ function SignUp() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log("signupData", data);
         setMassege(data);
         // logic to go to login page
         navigate("/login");
@@ -52,6 +52,7 @@ function SignUp() {
         <p className="text-sm sm:text-md font-extralight text-gray-400 font-serif pb-2">
           Create an account
         </p>
+        {/* <p>{massege}</p> */}
         <form
           onSubmit={submitHandler}
           className="flex flex-col w-full flex-wrap "
@@ -65,7 +66,8 @@ function SignUp() {
             className="border-2 rounded-md px-2 py-1 border-gray-400 outline-0"
             placeholder="Name..."
             name="username"
-            value={userName.username}
+            // value={userName.username}
+            value={userName}
             required
           />
           <label className="text-sm sm:text-md font-extralight  font-serif  py-1">
@@ -77,7 +79,8 @@ function SignUp() {
             className="border-2 rounded-md px-2 py-1 border-gray-400 outline-0 mb-4"
             placeholder="password..."
             name="password"
-            value={userPassword.password}
+            // value={userPassword.password}
+            value={userPassword}
             required
           />
           <Button text={"Sign up"} />

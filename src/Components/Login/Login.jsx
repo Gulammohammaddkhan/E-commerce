@@ -38,7 +38,7 @@ function Login() {
         console.log(data.username);
         localStorage.setItem("userName", data.username);
       })
-      .catch((e) => console.log("hgfshgfshgfsghsf", e));
+      .catch((error) => console.log("hgfshgfshgfsghsf", error));
   }
 
   // try {
