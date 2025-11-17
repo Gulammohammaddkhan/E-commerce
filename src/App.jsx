@@ -9,12 +9,18 @@ import Products from "./Components/Products/Products";
 import ProductDetail from "./Components/ProductDetail/ProductDetail";
 
 function App() {
-  // const location = useLocation();
+  const location = useLocation();
+
+  console.log("location", location);
+
+  const routestobehidden = ["/login", "/signup"];
+
+  let isNavbarHidden = routestobehidden.includes(location.pathname);
 
   return (
     <>
       {/* {location.pathname !== "/login" && <Navbar />} */}
-      <Navbar />
+      {!isNavbarHidden && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />

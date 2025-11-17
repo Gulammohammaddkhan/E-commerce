@@ -10,15 +10,17 @@ import { ImSwitch } from "react-icons/im";
 function Navbar() {
   const [userName, setUserName] = useState("");
   const nagivate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
   // console.log("location", location);
 
   useEffect(() => {
     const user = localStorage.getItem("userName");
     console.log("qwerty", user);
 
-    setUserName(user);
-  }, [userName, location]);
+    if (user) {
+      setUserName(user);
+    }
+  }, [userName]);
 
   function logOutHandler() {
     localStorage.removeItem("userName");
