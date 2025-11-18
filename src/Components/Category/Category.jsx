@@ -17,6 +17,12 @@ function Category() {
     <div>
       <h2>CATEGORY</h2>
       <p>
+        <p>hello</p>
+        <p>hi</p>
+        <div>
+          <div>how</div>
+          <div>are</div>
+        </div>
         {category.map((item) => {
           return (
             <div>
