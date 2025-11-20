@@ -6,6 +6,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ImSwitch } from "react-icons/im";
+import Button from "../Button/Button";
 
 function Navbar() {
   const [userName, setUserName] = useState("");
@@ -63,7 +64,14 @@ function Navbar() {
           )}
         </div>
       </Link>
-      <button className="flex items-center gap-3 font-serif text-[#172657] cursor-pointer ">
+      <Link to={"/products"}>
+        {userName && (
+          <button className="px-4 py-2 gap-2 text-[#172657] font-serif hover:bg-[#172657] cursor-pointer hover:text-white rounded-md">
+            Products
+          </button>
+        )}
+      </Link>
+      <button className="flex items-center gap-2 px-4 py-2 font-serif text-[#172657] hover:bg-[#172657] cursor-pointer hover:text-white rounded-md ">
         <AiOutlineShoppingCart /> Cart
       </button>
     </div>

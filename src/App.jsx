@@ -7,6 +7,9 @@ import Home from "./Components/Home/Home";
 import SignUp from "./Components/SignUp/SignUp";
 import Products from "./Components/Products/Products";
 import ProductDetail from "./Components/ProductDetail/ProductDetail";
+import CatergoryProduct from "./Components/Category/CategoryProduct";
+import Category from "./Components/Category/Category";
+import CategoryProduct from "./Components/Category/CategoryProduct";
 
 function App() {
   const location = useLocation();
@@ -25,6 +28,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
+        {/* <Route
+          path="/products/category/:category"
+          element={<CatergoryProduct />}
+        /> */}
+        <Route
+          path="/products/category/:category"
+          element={<CategoryProduct />}
+        />
         <Route path="/products/:id" element={<ProductDetail />} />
 
         <Route path="/signup" element={<SignUp />} />

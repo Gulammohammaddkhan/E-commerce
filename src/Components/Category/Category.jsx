@@ -23,11 +23,12 @@ import womenDress from "../../assets/Images/WomenDress.png";
 import womenJewlry from "../../assets/Images/WomenJewlry.png";
 import womenShoes from "../../assets/Images/WomenShoes.png";
 import womenWatches from "../../assets/Images/WomenWatches.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Category() {
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState(null);
+  const navigate = useNavigate();
 
   const categoryImages = {
     beauty: beauty,
@@ -72,6 +73,14 @@ function Category() {
       });
   }, []);
 
+  useEffect(() => {
+    if (!localStorage.getItem("userName")) {
+      {
+        navigate("/login");
+      }
+    }
+  }, []);
+
   return (
     <div>
       <h2 className="text-center py-10 text-3xl font-semibold font-sans text-[#1d398f] ">
@@ -80,18 +89,18 @@ function Category() {
       <div className="px-10 grid grid-cols-3 gap-8 text-center  ">
         {categories.map((item) => {
           return (
-            <Link>
+            <Link to={`/products/category/${item?.slug}`}>
               <div
                 className="w-fit border-[#cbe3ff] bg-[#f2f3f5]  border rounded-lg shadow  transition-all duration-200 hover:shadow-lg hover:-translate-y-2 cursor-pointer"
-                key={item.slug}
+                key={item?.slug}
               >
                 <img
-                  src={item.image}
+                  src={item?.image}
                   alt=""
                   className="w-[350px] h-[300px] rounded-t-lg"
                 />
                 <h3 className="text-2xl font-semibold font-sans py-2 text-[#1c398e]">
-                  {item.name}
+                  {item?.name}
                 </h3>
               </div>
             </Link>

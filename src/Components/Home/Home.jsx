@@ -47,7 +47,6 @@ function Home() {
       <Category />
       <Testimonial />
       {/* <Card item={item} /> */}
-      <p>home page</p>
     </div>
   );
 }
