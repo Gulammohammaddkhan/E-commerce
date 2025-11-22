@@ -28,7 +28,8 @@ function Login() {
       .then((res) => {
         if (res.ok) {
           // localStorage.setItem("username", userName);
-          navigate("/products");
+          // navigate("/products");
+          navigate("/");
         }
 
         return res.json();
