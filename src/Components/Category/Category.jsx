@@ -28,7 +28,6 @@ import { Link, useNavigate } from "react-router-dom";
 function Category() {
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState(null);
-  const navigate = useNavigate();
 
   const categoryImages = {
     beauty: beauty,
@@ -73,13 +72,7 @@ function Category() {
       });
   }, []);
 
-  useEffect(() => {
-    if (!localStorage.getItem("userName")) {
-      {
-        navigate("/login");
-      }
-    }
-  }, []);
+
 
   return (
     <div>

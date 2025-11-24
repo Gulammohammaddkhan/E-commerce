@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Card from "../Cards/Card";
 
 const CategoryProduct = () => {
   const [productCategory, setProductCategory] = useState([]);
   const { category } = useParams();
   const { id } = useParams();
+  const navigate = useNavigate();
+
   useEffect(() => {
     fetch(
       `https://e-commerce-backened-4fih.onrender.com/categories/${category}`
@@ -28,6 +30,14 @@ const CategoryProduct = () => {
       .then((data) => {
         console.log(" productId data", data.products);
       });
+  }, []);
+
+  useEffect(() => {
+    if (!localStorage.getItem("userName")) {
+      {
+        navigate("/login");
+      }
+    }
   }, []);
   return (
     <div>
