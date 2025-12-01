@@ -7,12 +7,14 @@ import { CiSearch } from "react-icons/ci";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ImSwitch } from "react-icons/im";
 import Button from "../Button/Button";
+import { useSelector } from "react-redux";
 
 function Navbar() {
   const [userName, setUserName] = useState("");
   const nagivate = useNavigate();
   // const location = useLocation();
   // console.log("location", location);
+  const cartCount = useSelector((state) => state.cartQuantity);
 
   useEffect(() => {
     const user = localStorage.getItem("userName");
@@ -71,9 +73,12 @@ function Navbar() {
           </button>
         )}
       </Link>
-      <button className="flex items-center gap-2 px-4 py-2 font-serif text-[#172657] hover:bg-[#172657] cursor-pointer hover:text-white rounded-md ">
-        <AiOutlineShoppingCart /> Cart
-      </button>
+      <Link to={"/cart"}>
+        <button className="flex items-center gap-0.5 px-4 py-2 font-serif text-[#172657] hover:bg-[#172657] cursor-pointer hover:text-white rounded-md ">
+          <AiOutlineShoppingCart /> Cart
+          <p className="text-sm text-red-600 px-1">{cartCount}</p>
+        </button>
+      </Link>
     </div>
   );
 }

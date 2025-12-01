@@ -1,0 +1,16 @@
+const initialState = {
+  cartQuantity: 0,
+  cartProducts: [],
+};
+
+export function myReducer(state = initialState, action) {
+  if (action.type === "ADD_PRODUCT") {
+    return {
+      ...state,
+      cartQuantity: state.cartQuantity + 1,
+      cartProducts: [...state.cartProducts, action.payload],
+    };
+  } else {
+    return state;
+  }
+}

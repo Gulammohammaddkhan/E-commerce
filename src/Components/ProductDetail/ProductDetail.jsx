@@ -5,11 +5,13 @@ import Button from "../Button/Button";
 import { IoMdCart } from "react-icons/io";
 import { AiFillThunderbolt } from "react-icons/ai";
 import Card from "../Cards/Card";
+import { useDispatch } from "react-redux";
 
 function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [category, setCategory] = useState(null);
   const [categoryProducts, setCategoryProducts] = useState();
+  const dispatch = useDispatch()
 
   const { id } = useParams();
   useEffect(() => {
@@ -48,6 +50,13 @@ function ProductDetail() {
 
   console.log("gfchchcf", categoryProducts);
 
+  function addProductHanlder(){
+dispatch({
+  type:"ADD_PRODUCT",
+  payload:product
+})
+  }
+
   return (
     product && (
       <>
@@ -64,7 +73,8 @@ function ProductDetail() {
             {/* product-imge */}
             <img src={product.images[0]} alt="product-image" className="" />
             <div className="flex justify-around">
-              <Button
+              <Button 
+            clickHandler={addProductHanlder}
                 text="ADD TO CART"
                 backGroundColor="#ff9d00"
                 display="flex"

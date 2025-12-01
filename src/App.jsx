@@ -10,6 +10,7 @@ import ProductDetail from "./Components/ProductDetail/ProductDetail";
 import CatergoryProduct from "./Components/Category/CategoryProduct";
 import Category from "./Components/Category/Category";
 import CategoryProduct from "./Components/Category/CategoryProduct";
+import Cart from "./Components/Cart/Cart";
 
 function App() {
   const location = useLocation();
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/cart" element={<Cart />} />
         {/* <Route
           path="/products/category/:category"
           element={<CatergoryProduct />}
