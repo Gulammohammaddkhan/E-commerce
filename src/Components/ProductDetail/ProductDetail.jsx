@@ -11,7 +11,7 @@ function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [category, setCategory] = useState(null);
   const [categoryProducts, setCategoryProducts] = useState();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const { id } = useParams();
   useEffect(() => {
@@ -50,18 +50,18 @@ function ProductDetail() {
 
   console.log("gfchchcf", categoryProducts);
 
-  function addProductHanlder(){
-dispatch({
-  type:"ADD_PRODUCT",
-  payload:product
-})
+  function addProductHanlder() {
+    dispatch({
+      type: "ADD_PRODUCT",
+      payload: product,
+    });
   }
 
   return (
     product && (
       <>
-        <div className="flex px-2 h-screen">
-          <div className="sticky top-10 h-fit">
+        <div className="flex px-2 h-screen gap-2">
+          <div className="sticky top-10 h-fit bg-[#f2f2f2] rounded-xl mt-2">
             {/* thumbnail */}
             <img
               src={product.thumbnail}
@@ -69,12 +69,18 @@ dispatch({
               className="w-[200px]"
             />
           </div>
-          <div className="sticky top-10 ml-4">
-            {/* product-imge */}
-            <img src={product.images[0]} alt="product-image" className="" />
+          <div className="min-w-[35%] w-[35%] bg-[#f2f2f2] rounded-xl mt-2 sticky top-10">
+            <div className=" ml-4">
+              {/* product-imge */}
+              <img
+                src={product.images[0]}
+                alt="product-image"
+                className="w-full"
+              />
+            </div>
             <div className="flex justify-around">
-              <Button 
-            clickHandler={addProductHanlder}
+              <Button
+                clickHandler={addProductHanlder}
                 text="ADD TO CART"
                 backGroundColor="#ff9d00"
                 display="flex"
@@ -90,7 +96,8 @@ dispatch({
               />
             </div>
           </div>
-          <div className="h-screen px-2 overflow-y-scroll [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ">
+
+          <div className="border-l-1 border-l-gray-400 h-screen px-6 overflow-y-scroll [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ">
             <div className="text-4xl font-semibold font-sans pt-4 pb-6">
               {product.title}
             </div>

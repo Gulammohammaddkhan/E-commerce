@@ -11,6 +11,7 @@ import CatergoryProduct from "./Components/Category/CategoryProduct";
 import Category from "./Components/Category/Category";
 import CategoryProduct from "./Components/Category/CategoryProduct";
 import Cart from "./Components/Cart/Cart";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   const location = useLocation();
@@ -42,6 +43,7 @@ function App() {
 
         <Route path="/signup" element={<SignUp />} />
       </Routes>
+      <Footer />
       {/* <SignUp
         formData={formData}
         changeHandler={changeHandler}
