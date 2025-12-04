@@ -32,13 +32,13 @@ function Navbar() {
   }
 
   return (
-    <div className="flex justify-around items-center h-16 sticky top-0 z-50 bg-white shadow-md">
+    <div className=" flex justify-around items-center  h-16 sticky top-0 z-50 bg-white shadow-md">
       <Link to="/">
-        <button className="cursor-pointer">
-          <img src={logo} alt="" className="w-[100px] h-18" />
+        <button className="  cursor-pointer">
+          <img src={logo} alt="" className="w-[100px]  h-18" />
         </button>
       </Link>
-      <div className="flex items-center w-[500px]  rounded-md py-1.5 px-2  h-10 bg-[#f0f5ff]">
+      <div className=" flex items-center w-[500px]  rounded-md py-1.5 px-2  h-10 bg-[#f0f5ff]">
         <CiSearch />
         <input
           type="text"
@@ -51,15 +51,15 @@ function Navbar() {
         to={"/login"}
         replace={true}
       >
-        <div className="flex gap-2">
-          <button className="flex justify-center items-center px-4 py-2 gap-2 text-[#172657] font-serif hover:bg-[#172657] cursor-pointer hover:text-white rounded-md">
+        <div className=" flex gap-2">
+          <button className=" flex justify-center items-center px-4 py-2 gap-2 text-[#172657] font-serif hover:bg-[#172657] cursor-pointer hover:text-white rounded-md">
             <SlUserFemale />
             {userName ? userName : "Login"}
           </button>
           {userName && (
             <button
               onClick={logOutHandler}
-              className="px-4 py-2 text-[#172657] font-serif hover:bg-[#172657] cursor-pointer hover:text-white rounded-md"
+              className=" px-4 py-2 text-[#172657] font-serif hover:bg-[#172657] cursor-pointer hover:text-white rounded-md"
             >
               <ImSwitch />
             </button>
@@ -68,13 +68,13 @@ function Navbar() {
       </Link>
       <Link to={"/products"}>
         {userName && (
-          <button className="px-4 py-2 gap-2 text-[#172657] font-serif hover:bg-[#172657] cursor-pointer hover:text-white rounded-md">
+          <button className=" px-4 py-2 gap-2 text-[#172657] font-serif hover:bg-[#172657] cursor-pointer hover:text-white rounded-md">
             Products
           </button>
         )}
       </Link>
       <Link to={"/cart"}>
-        <button className="flex items-center gap-0.5 px-4 py-2 font-serif text-[#172657] hover:bg-[#172657] cursor-pointer hover:text-white rounded-md ">
+        <button className=" flex items-center gap-0.5 px-4 py-2 font-serif text-[#172657] hover:bg-[#172657] cursor-pointer hover:text-white rounded-md ">
           <AiOutlineShoppingCart /> Cart
           <p className="text-sm text-red-600 px-1">{cartCount}</p>
         </button>

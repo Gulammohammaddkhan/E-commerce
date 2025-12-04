@@ -43,7 +43,7 @@ function App() {
 
         <Route path="/signup" element={<SignUp />} />
       </Routes>
-      <Footer />
+      {!isNavbarHidden && <Footer />}
       {/* <SignUp
         formData={formData}
         changeHandler={changeHandler}

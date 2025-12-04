@@ -12,7 +12,7 @@ function Cart() {
   // console.log("first", cartProducts);
 
   return (
-    <div>
+    <div className="h-screen">
       {cartProducts.length === 0 && (
         <p className="text-2xl font-semibold font-sans text-[#1c398e] py-6">
           {" "}
@@ -27,7 +27,7 @@ function Cart() {
       {cartProducts.map((item) => {
         return (
           <Link to={`/products/${item.id}`}>
-            <div className="flex flex-row items-center justify-between m-10 px-8 py-2 rounded-2xl shadow-2xl shadow-gray-600 bg-white">
+            <div className=" flex flex-row items-center justify-between m-10 px-8 py-2 rounded-2xl shadow-2xl shadow-gray-600 bg-white">
               <img src={item.images} className="w-24" />
               <p key={item.id} className="text-2xl font-semibold">
                 {item.title}
