@@ -12,7 +12,7 @@ import Category from "../Category/Category";
 function Home() {
   return (
     <div>
-      <img src={hero} alt="" className="w-fit" />
+      <img src={hero} alt="" className="w-fit sm:w-full md:w-full lg:w-full" />
       <div className="relative w-full overflow-hidden bg-black py-2 font-semibold text-white">
         {/* Outer container: Overflow hidden */}
         {/* Inner container jismein animation class 'marquee-container' aur width: 200% applied hai */}
