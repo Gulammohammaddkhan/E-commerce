@@ -72,14 +72,12 @@ function Category() {
       });
   }, []);
 
-
-
   return (
     <div>
       <h2 className="text-center py-10 text-3xl font-semibold font-sans text-[#1d398f] ">
         CATEGORY
       </h2>
-      <div className="px-10 grid grid-cols-3 gap-8 text-center  ">
+      <div className="px-10 grid grid-cols-1 sm:grid sm:grid-cols-3 md:grid md:grid-cols-2 gap-8 text-center  ">
         {categories.map((item) => {
           return (
             <Link to={`/products/category/${item?.slug}`}>

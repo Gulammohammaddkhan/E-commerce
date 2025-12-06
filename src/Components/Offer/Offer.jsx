@@ -27,25 +27,25 @@ function Offer() {
           <img
             src={random}
             alt=""
-            className=" w-[80%] h-[500px] rounded-4xl shadow-2xl shadow-gray-300 "
+            className=" w-full sm:w-[80%] sm:h-[500px] rounded-2xl sm:rounded-4xl shadow-2xl shadow-gray-300 "
           />
         </div>
-        <div className="flex px-10 py-4 bg-gray-100 rounded-2xl">
-          <div className="relative w-[80%]">
+        <div className="flex flex-col gap-2 justify-center items-center  sm:flex sm:flex-row px-10 py-4 bg-gray-100 rounded-2xl">
+          <div className="relative w-[70%]">
             <img
               src={images[currentIndex]}
               alt=""
-              className="w-fit rounded-2xl "
+              className="w-fit rounded-2xl"
             />
             <button
               onClick={backBtn}
-              className=" absolute top-[45%] left-[-2%] text-[#52a3ff] "
+              className=" absolute  top-[40%] left-[-4%] md:top-[40%] md:left-[-4%] lg:top-[45%] lg:left-[-2%]  text-[#52a3ff] "
             >
               <IoIosArrowDropleftCircle size={"30px"} />
             </button>
             <button
               onClick={nextBtn}
-              className="absolute top-[45%] right-[-2%] text-[#52a3ff]  "
+              className="absolute top-[40%] right-[-4%] md:top-[40%] md:right-[-4%] lg:top-[45%] lg:right-[-2%] text-[#52a3ff]  "
             >
               <IoIosArrowDroprightCircle className="" size={"30px"} />
             </button>

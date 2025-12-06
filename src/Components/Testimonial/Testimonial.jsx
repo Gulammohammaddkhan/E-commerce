@@ -115,16 +115,16 @@ function Testimonial() {
     },
   ];
   return (
-    <div className=" py-16 overflow-scroll">
+    <div className="py-16 overflow-scroll">
       <div>
-        <h2 className="text-center text-4xl font-semibold font-serif text-blue-900">
+        <h2 className="text-center text-4xl font-semibold font-serif text-blue-900 content-center">
           Testimonial
         </h2>
-        <div className="px-14">
-          <div className="grid grid-flow-col overflow-x-scroll [scrollbar-width:none] [&::-webkit-scrollbar]:hidden gap-4 px-10 py-14 overflow-x-scroll">
+        <div className=" px-8 sm:px-14 content-center">
+          <div className="grid grid-flow-col  [scrollbar-width:none] [&::-webkit-scrollbar]:hidden gap-4 px-10 py-14 overflow-x-scroll">
             {testimonials.map((item, index) => {
               return (
-                <div className="w-[350px] bg-indigo-100 flex flex-col items-center px-4 py-4 gap-2 rounded-2xl">
+                <div className="w-[200px] sm:w-[350px] bg-indigo-100 flex flex-col items-center  px-4 py-4 gap-2 rounded-2xl">
                   <div>{item.rating}</div>{" "}
                   <p className="text-gray-500 p-4">{item.text}</p>
                   <h3 className="font-semibold font-serif text-blue-900">

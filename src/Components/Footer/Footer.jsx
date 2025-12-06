@@ -9,7 +9,7 @@ import Cards from "../../assets/Images/Cards.avif";
 function Footer() {
   return (
     <div className="bg-[#112255]">
-      <div className="flex justify-between pt-8 pb-14 px-10 text-[#8090c0] border-b-1 border-b-[#6074b0]">
+      <div className="flex flex-col sm:flex sm:flex-row gap-4 justify-between pt-8 pb-14 px-10 text-[#8090c0] border-b-1 border-b-[#6074b0]">
         <div className="flex flex-col gap-2">
           <h2 className="text-xl font-semibold pb-2 text-[#a0acd0]">Menu</h2>
           <div>Home</div>
@@ -32,7 +32,7 @@ function Footer() {
           <div>Phone:-+917977199080</div>
         </div>
       </div>
-      <div className="flex  justify-around py-4">
+      <div className="flex flex-col gap-3 sm:flex sm:flex-row justify-around px-2 py-4">
         <div>
           <img src={Cards} alt="" />
         </div>
