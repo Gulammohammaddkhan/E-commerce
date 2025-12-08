@@ -120,8 +120,8 @@ function Testimonial() {
         <h2 className="text-center text-4xl font-semibold font-serif text-blue-900 content-center">
           Testimonial
         </h2>
-        <div className=" px-8 sm:px-14 content-center">
-          <div className="grid grid-flow-col  [scrollbar-width:none] [&::-webkit-scrollbar]:hidden gap-4 px-10 py-14 overflow-x-scroll">
+        <div className=" px-5 sm:px-14 content-center">
+          <div className="grid grid-flow-col  [scrollbar-width:none] [&::-webkit-scrollbar]:hidden gap-4 px-4 sm:px-10 py-14 overflow-x-scroll">
             {testimonials.map((item, index) => {
               return (
                 <div className="w-[200px] sm:w-[350px] bg-indigo-100 flex flex-col items-center  px-4 py-4 gap-2 rounded-2xl">

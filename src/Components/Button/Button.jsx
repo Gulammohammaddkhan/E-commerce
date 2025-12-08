@@ -7,6 +7,8 @@ function Button({
   icon,
   display,
   flexDirection,
+  width,
+  justifyContent,
 }) {
   // const [btnDisabled, setBtnDisabled] = useState(false);
 
@@ -29,11 +31,13 @@ function Button({
     <div className="flex justify-center items-center">
       <button
         onClick={clickHandler}
-        className={` px-6 py-3 items-center gap-2 cursor-pointer hover:scale-101 transition-all rounded-md text-white font-semibold font-serif bg-blue-950`} // disabled={disabledHandler}
+        className={` px-6 py-3 items-center gap-2 sm:gap-1 sm:text-[7px] cursor-pointer hover:scale-101 transition-all rounded-md text-white font-semibold font-serif bg-blue-950`} // disabled={disabledHandler}
         style={{
           backgroundColor: backGroundColor,
           display: display,
           flexDirection: flexDirection,
+          width: width,
+          justifyContent: justifyContent,
         }}
       >
         {icon && icon}

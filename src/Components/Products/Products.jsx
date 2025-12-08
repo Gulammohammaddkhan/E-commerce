@@ -23,10 +23,10 @@ function Products() {
   }, []);
 
   return (
-    <div className="grid grid-cols-3 gap-5 bg-gray-100">
+    <div className=" grid grid-cols-1 items-center items-stretch py-5 justify-center px-2 sm:grid sm:grid-cols-2 md:grid md:grid-cols-3 gap-3 bg-gray-100">
       {products.map((item, index) => {
         return (
-          <Link to={`/products/${item.id}`}>
+          <Link className="flex justify-center" to={`/products/${item.id}`}>
             <Card item={item} index={index} />
           </Link>
         );

@@ -5,19 +5,16 @@ function Card({ item, index }) {
   console.log("item", item);
 
   return (
-    <div className="w-full  flex justify-center py-6 px-4">
-      <div
-        key={`${item.id}-${index}`}
-        className="
-      w-full max-w-xs sm:max-w-sm 
+    <div
+      className="w-full flex flex-col items-center justify-between w-full max-w-xs sm:max-w-sm 
       bg-white dark:bg-gray-800 
       rounded-2xl shadow-xl 
-      p-5 transition-all duration-300 
+      transition-all duration-300 
       hover:shadow-2xl hover:-translate-y-1 
       flex flex-col items-center 
-      border border-gray-200 dark:border-gray-700
-    "
-      >
+      border border-gray-200 dark:border-gray-700"
+    >
+      <div>
         {/* Product Image */}
         <img
           src={item.images[0]}
@@ -30,20 +27,17 @@ function Card({ item, index }) {
         
       "
         />
-
+      </div>
+      <div
+        key={`${item.id}-${index}`}
+        className="
+      px-4 py-6 text-center
+    "
+      >
         {/* Rating and Count */}
-        <div className="flex gap-6 text-sm mb-3">
-          <p className="flex items-center text-yellow-500 font-medium">
-            {" "}
-            <span className="ml-1 text-gray-700 dark:text-gray-300">
-              {item.rating.rate}
-            </span>
-          </p>
-          <p className="flex items-center text-blue-500 font-medium">
-            ⭐{" "}
-            <span className="ml-1 text-gray-700 dark:text-gray-300">
-              {item.rating.count} ratings
-            </span>
+        <div className="flex justify-center gap-6 text-sm mb-3">
+          <p className="text-center text-yellow-500 font-medium">
+            {item.rating} ⭐
           </p>
         </div>
 

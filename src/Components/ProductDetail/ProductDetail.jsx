@@ -59,9 +59,9 @@ function ProductDetail() {
 
   return (
     product && (
-      <>
-        <div className="flex px-2 h-screen gap-2">
-          <div className="sticky top-10 h-fit bg-[#f2f2f2] rounded-xl mt-2">
+      <div className="flex flex-col">
+        <div className="flex flex-col gap-4 sm:flex sm:flex-row  px-2 sm:h-screen sm:gap-2 ">
+          <div className="hidden sm:block sm:sticky top-10 h-fit bg-[#f2f2f2] rounded-xl mt-2">
             {/* thumbnail */}
             <img
               src={product.thumbnail}
@@ -69,7 +69,7 @@ function ProductDetail() {
               className="w-[200px]"
             />
           </div>
-          <div className="min-w-[35%] w-[35%] bg-[#f2f2f2] rounded-xl mt-2 sticky top-10">
+          <div className="sm:min-w-[35%] sm:w-[35%] md:min-w-[35%] md:w-[35%] lg:min-w-[35%] lg:w-[35%] lg:px-2 sm:h-fit sm:px-2 bg-[#f2f2f2] py-4 rounded-xl mt-2 sm:sticky top-10">
             <div className=" ml-4">
               {/* product-imge */}
               <img
@@ -78,26 +78,34 @@ function ProductDetail() {
                 className="w-full"
               />
             </div>
-            <div className="flex justify-around">
-              <Button
-                clickHandler={addProductHanlder}
-                text="ADD TO CART"
-                backGroundColor="#ff9d00"
-                display="flex"
-                flexDirection="row"
-                icon={<IoMdCart size={20} />}
-              />
-              <Button
-                text="BUY NOW"
-                backGroundColor="#fa661b"
-                display="flex"
-                flexDirection="row"
-                icon={<AiFillThunderbolt size={20} />}
-              />
+            <div className="flex flex-col gap-2 sm:gap-2 md:flex-row lg:flex-row justify-around">
+              <div className="">
+                <Button
+                  clickHandler={addProductHanlder}
+                  text="ADD TO CART"
+                  backGroundColor="#ff9d00"
+                  display="flex"
+                  flexDirection="row"
+                  justifyContent="center "
+                  width="200px sm:w-fit"
+                  icon={<IoMdCart size={20} />}
+                />
+              </div>
+              <div className="">
+                <Button
+                  text="BUY NOW"
+                  backGroundColor="#fa661b"
+                  display="flex"
+                  flexDirection="row"
+                  justifyContent="center "
+                  width="200px sm:w-fit"
+                  icon={<AiFillThunderbolt size={20} />}
+                />
+              </div>
             </div>
           </div>
 
-          <div className="border-l-1 border-l-gray-400 h-screen px-6 overflow-y-scroll [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ">
+          <div className=" border-l-1 border-l-gray-400 h-screen px-6 overflow-y-scroll [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ">
             <div className="text-4xl font-semibold font-sans pt-4 pb-6">
               {product.title}
             </div>
@@ -240,24 +248,24 @@ function ProductDetail() {
           </div>
         </div>
 
-        <div className="py-20">
+        <div className="py-20 lg:mt-14 xl:mt-36">
           <h2 className="text-center text-2xl font-semibold text-[#4e38f5] font-sans">
             Similar Products
           </h2>
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-1 mx-3 pt-5  gap-6 sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3">
             {categoryProducts &&
               categoryProducts.map((item, index) => {
                 return (
                   <Link to={`/products/${item.id}`}>
-                    <div className="">
-                      <Card item={item} index={index} />;
+                    <div className=" flex justify-center">
+                      <Card item={item} index={index} />
                     </div>
                   </Link>
                 );
               })}
           </div>
         </div>
-      </>
+      </div>
     )
   );
 }

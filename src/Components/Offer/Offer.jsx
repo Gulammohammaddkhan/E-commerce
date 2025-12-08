@@ -30,8 +30,8 @@ function Offer() {
             className=" w-full sm:w-[80%] sm:h-[500px] rounded-2xl sm:rounded-4xl shadow-2xl shadow-gray-300 "
           />
         </div>
-        <div className="flex flex-col gap-2 justify-center items-center  sm:flex sm:flex-row px-10 py-4 bg-gray-100 rounded-2xl">
-          <div className="relative w-[70%]">
+        <div className="flex flex-col gap-2 justify-center items-center  sm:flex sm:flex-row sm:px-10 sm:py-4 bg-gray-100 rounded-2xl">
+          <div className="relative w-full sm:w-[70%]">
             <img
               src={images[currentIndex]}
               alt=""
@@ -50,7 +50,7 @@ function Offer() {
               <IoIosArrowDroprightCircle className="" size={"30px"} />
             </button>
           </div>
-          <div className="w-fit flex flex-col justify-center items-center px-10">
+          <div className="w-fit flex flex-col justify-center items-center px-5 sm:px-10">
             <h2 className="text-2xl font-semibold font-serif pb-4 text-blue-400">
               Why Choose <strong>Mk</strong>
               <strong className="text-orange-300">art</strong> for Your Fashion

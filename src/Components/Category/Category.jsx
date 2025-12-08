@@ -80,7 +80,10 @@ function Category() {
       <div className="px-10 grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 gap-8 text-center  ">
         {categories.map((item) => {
           return (
-            <Link to={`/products/category/${item?.slug}`}>
+            <Link
+              className="flex justify-center"
+              to={`/products/category/${item?.slug}`}
+            >
               <div
                 className="w-fit border-[#cbe3ff] bg-[#f2f3f5]  border rounded-lg shadow  transition-all duration-200 hover:shadow-lg hover:-translate-y-2 cursor-pointer"
                 key={item?.slug}
