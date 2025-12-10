@@ -73,10 +73,10 @@ function Login() {
   return (
     <div className="h-screen bg-gradient-to-br from-blue-950 to-blue-500 flex justify-center items-center">
       <div className=" flex flex-col items-center bg-[#ededed] rounded-lg justify-center p-6  sm:p-10 shadow-2xl shadow-gray-800 w-[80%] sm:w-auto  h-[80%] sm:h-auto ">
-        <h2 className="text-md sm:text-2xl font-semibold font-serif pb-2">
+        <h2 className="text-md sm:text-2xl font-semibold font-serif sm:pb-2">
           Welcome,Login to your Account.
         </h2>
-        <p className="text-md font-extralight text-gray-400 font-serif pb-6">
+        <p className="text-md font-extralight text-gray-400 font-serif pb-2 sm:pb-6">
           Please enter your details
         </p>
         {error && (
@@ -112,7 +112,7 @@ function Login() {
 
           <Button text=" Log-in" />
         </form>
-        <div className="flex items-center justify-between gap-4 pt-2 text-sm font-serif text-gray-500">
+        <div className="flex items-center justify-between sm:gap-4 pt-2 text-sm font-serif text-gray-500">
           <div>New Customer?</div>
           <Link
             className="text-blue-700 font-semibold hover:scale-102"

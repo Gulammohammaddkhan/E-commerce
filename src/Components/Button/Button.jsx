@@ -31,7 +31,7 @@ function Button({
     <div className="flex justify-center items-center">
       <button
         onClick={clickHandler}
-        className={` px-6 py-3 items-center gap-2 sm:gap-1 sm:text-[7px] cursor-pointer hover:scale-101 transition-all rounded-md text-white font-semibold font-serif bg-blue-950`} // disabled={disabledHandler}
+        className={` px-6 py-3 items-center gap-2 sm:gap-1 text-[12px] sm:text-[12px] md:text-[12px] lg:text-[13px] xl:text-[15px] cursor-pointer hover:scale-101 transition-all rounded-md text-white font-semibold font-serif bg-blue-950`} // disabled={disabledHandler}
         style={{
           backgroundColor: backGroundColor,
           display: display,

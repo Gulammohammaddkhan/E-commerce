@@ -78,7 +78,7 @@ function ProductDetail() {
                 className="w-full"
               />
             </div>
-            <div className="flex flex-col gap-2 sm:gap-2 md:flex-row lg:flex-row justify-around">
+            <div className="flex flex-col gap-2 sm:gap-2  md:flex-row lg:flex-row justify-around">
               <div className="">
                 <Button
                   clickHandler={addProductHanlder}
