@@ -86,6 +86,7 @@ function SignUp() {
           <Button text={"Sign up"} />
         </form>
       </div>
+      <div>to delete</div>
     </div>
   );
 }
