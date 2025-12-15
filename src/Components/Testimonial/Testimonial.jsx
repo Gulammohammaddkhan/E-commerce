@@ -126,7 +126,7 @@ function Testimonial() {
               return (
                 <div className="w-[200px] sm:w-[350px] bg-indigo-100 flex flex-col items-center  px-4 py-4 gap-2 rounded-2xl">
                   <div>{item.rating}</div>{" "}
-                  <p className="text-gray-500 p-4">{item.text}</p>
+                  <p className="text-gray-500">{item.text}</p>
                   <h3 className="font-semibold font-serif text-blue-900">
                     {item.name}
                   </h3>

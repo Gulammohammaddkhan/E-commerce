@@ -57,7 +57,7 @@ function Category() {
   };
 
   useEffect(() => {
-    fetch("https://e-commerce-backened-4fih.onrender.com/categories")
+    fetch(`${import.meta.env.VITE_BASE_URL}/categories`)
       .then((res) => res.json())
       .then((data) => {
         const updated = data.map((item) => ({
@@ -77,7 +77,7 @@ function Category() {
       <h2 className="text-center py-10 text-3xl font-semibold font-sans text-[#1d398f] ">
         CATEGORY
       </h2>
-      <div className="px-10 grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 gap-8 text-center  ">
+      <div className="px-10 grid grid-cols-1 sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 2xl:grid 2xl:grid-cols-4 gap-8 text-center  ">
         {categories.map((item) => {
           return (
             <Link

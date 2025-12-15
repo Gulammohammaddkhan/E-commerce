@@ -9,9 +9,7 @@ const CategoryProduct = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(
-      `https://e-commerce-backened-4fih.onrender.com/categories/${category}`
-    )
+    fetch(`${import.meta.env.VITE_BASE_URL}/categories/${category}`)
       .then((res) => {
         return res.json();
       })
@@ -25,7 +23,7 @@ const CategoryProduct = () => {
   }, [category]);
 
   useEffect(() => {
-    fetch(`https://e-commerce-backened-4fih.onrender.com/categories/${id}`)
+    fetch(`${import.meta.env.VITE_BASE_URL}/categories/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(" productId data", data.products);

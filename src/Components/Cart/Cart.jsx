@@ -12,7 +12,7 @@ function Cart() {
   // console.log("first", cartProducts);
 
   return (
-    <div className="h-screen mb-14">
+    <div className="mb-14">
       <div>
         {cartProducts.length === 0 && (
           <p className="text-2xl font-semibold font-sans text-[#1c398e] px-6 py-6">

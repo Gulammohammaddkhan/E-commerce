@@ -26,23 +26,25 @@ function App() {
     <>
       {/* {location.pathname !== "/login" && <Navbar />} */}
       {!isNavbarHidden && <Navbar />}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/cart" element={<Cart />} />
-        {/* <Route
+      <div className="min-h-screen">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
+          {/* <Route
           path="/products/category/:category"
           element={<CatergoryProduct />}
         /> */}
-        <Route
-          path="/products/category/:category"
-          element={<CategoryProduct />}
-        />
-        <Route path="/products/:id" element={<ProductDetail />} />
+          <Route
+            path="/products/category/:category"
+            element={<CategoryProduct />}
+          />
+          <Route path="/products/:id" element={<ProductDetail />} />
 
-        <Route path="/signup" element={<SignUp />} />
-      </Routes>
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </div>
       {!isNavbarHidden && <Footer />}
       {/* <SignUp
         formData={formData}

@@ -28,7 +28,7 @@ function SignUp() {
   function submitHandler(e) {
     e.preventDefault();
 
-    fetch("https://e-commerce-backened-4fih.onrender.com/signup", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/signup`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: userName, password: userPassword }),

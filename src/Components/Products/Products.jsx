@@ -7,7 +7,7 @@ function Products() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://e-commerce-backened-4fih.onrender.com/products")
+    fetch(`${import.meta.env.VITE_BASE_URL}/products`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data.products);

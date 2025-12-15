@@ -15,7 +15,7 @@ function ProductDetail() {
 
   const { id } = useParams();
   useEffect(() => {
-    fetch(`https://e-commerce-backened-4fih.onrender.com/products/${id}`)
+    fetch(`${import.meta.env.VITE_BASE_URL}/products/${id}`)
       .then((res) => {
         return res.json();
       })
@@ -34,9 +34,7 @@ function ProductDetail() {
 
   useEffect(() => {
     if (category) {
-      fetch(
-        `https://e-commerce-backened-4fih.onrender.com/categories/${category}`
-      )
+      fetch(`${import.meta.env.VITE_BASE_URL}/categories/${category}`)
         .then((res) => {
           return res.json();
         })
@@ -248,7 +246,7 @@ function ProductDetail() {
           </div>
         </div>
 
-        <div className="py-20 lg:mt-14 xl:mt-36">
+        <div className="mt-5 md:mt-10">
           <h2 className="text-center text-2xl font-semibold text-[#4e38f5] font-sans">
             Similar Products
           </h2>

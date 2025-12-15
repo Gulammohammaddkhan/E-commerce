@@ -20,7 +20,7 @@ function Login() {
 
   function submitHandler(e) {
     e.preventDefault();
-    fetch("https://e-commerce-backened-4fih.onrender.com/login", {
+    fetch(`${import.meta.env.VITE_BASE_URL}/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: userName, password: password }),
