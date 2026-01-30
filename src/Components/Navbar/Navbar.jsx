@@ -37,7 +37,7 @@ function Navbar() {
       <div className=" flex justify-around items-center  h-16 sticky top-0 z-50 bg-white shadow-md">
         <Link to="/">
           <button className="  cursor-pointer">
-            <img src={logo} alt="" className="w-[100px]  h-18" />
+            <img src={logo} alt="" className="w-[100px]  h-16" />
           </button>
         </Link>
         <div className="hidden sm:flex justify-between items-center w-[45%]  rounded-md py-1.5 px-2  h-10 bg-[#f0f5ff]">

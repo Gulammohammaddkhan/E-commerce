@@ -15,7 +15,11 @@ function Offer() {
     setCurrentIndex((prev) => (prev + 1) % images.length);
   }
   function backBtn() {
-    setCurrentIndex((prev) => (prev - 1) % images.length);
+    if (currentIndex === 0) {
+      setCurrentIndex(images.length - 1);
+    } else {
+      setCurrentIndex((prev) => (prev - 1) % images.length);
+    }
   }
   return (
     <div>
