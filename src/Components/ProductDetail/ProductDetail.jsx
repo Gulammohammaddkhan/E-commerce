@@ -58,8 +58,8 @@ function ProductDetail() {
   return (
     product && (
       <div className="flex flex-col">
-        <div className="flex flex-col gap-4 sm:flex sm:flex-row  px-2 sm:h-screen sm:gap-2 ">
-          <div className="hidden sm:block sm:sticky top-10 h-fit bg-[#f2f2f2] rounded-xl mt-2">
+        <div className="flex flex-col gap-4 sm:flex sm:flex-row  px-2 sm:min-h-screen sm:gap-2 ">
+          <div className="hidden sm:block sm:sticky sm:top-10 h-fit bg-[#f2f2f2] rounded-xl mt-2">
             {/* thumbnail */}
             <img
               src={product.thumbnail}
@@ -67,7 +67,7 @@ function ProductDetail() {
               className="w-[200px]"
             />
           </div>
-          <div className="sm:min-w-[35%] sm:w-[35%] md:min-w-[35%] md:w-[35%] lg:min-w-[35%] lg:w-[35%] lg:px-2 sm:h-fit sm:px-2 bg-[#f2f2f2] py-4 rounded-xl mt-2 sm:sticky top-10">
+          <div className="sm:min-w-[35%] sm:w-[35%] md:min-w-[35%] md:w-[35%] lg:min-w-[35%] lg:w-[35%] lg:px-2 sm:h-fit sm:px-2 bg-[#f2f2f2] py-4 rounded-xl mt-2 sm:sticky sm:top-10">
             <div className=" ml-4">
               {/* product-imge */}
               <img
