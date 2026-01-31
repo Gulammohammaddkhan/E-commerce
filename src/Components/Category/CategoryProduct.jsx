@@ -43,7 +43,7 @@ const CategoryProduct = () => {
         Category Products
       </h2>
 
-      <div className="grid grid-cols-3 cursor-pointer">
+      <div className="grid grid-cols-1 place-items-center items-center sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 md:px-6  lg:grid lg:grid-cols-3  2xl:grid 2xl:grid-cols-4 gap-4 px-2 py-6 cursor-pointer">
         {productCategory?.map((item, index) => {
           return (
             <Link to={`/products/${item.id}`}>
